@@ -11,20 +11,18 @@
 
 	    		<div id="posts">
 
-	    		<h2><a href=""> </a> Entrada 1 </h2>
-	    		<p>Publicado en: </p>
-	    		<p>Contenido de la entrada 1</p>
+	    		{% for post in posts %}
 
-	    		<h2><a href=""> </a> Entrada 2 </h2>
-	    		<p>Publicado en: </p>
-	    		<p>Contenido de la entrada 2</p>
+	    		<h2><a href=""> </a> {{ post.title }} </h2>
+	    		<p>Publicado en: {{ post.published_date }} </p>
+	    		<p>{{ post.text|linebreaks }}</p>
 
-				<h2><a href=""> </a> Entrada 3 </h2>
-				<p>Publicado en: </p>
-				<p>Contenido de la entrada 3</p>
-
+				{% endfor %}
 				</div>
 
+				<div id="botones">
+					<input type="button" value='Crear Nueva Entrada' />
+				</div>
 			</div>
 		</div>
     </body>
